@@ -1,5 +1,5 @@
 echo Installing Nginx
-yum install nginx -y &>>/tmp/frontend
+yum install nginnx -y &>>/tmp/frontend
 echo status = $?
 
 systemctl enable nginx
