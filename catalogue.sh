@@ -5,6 +5,7 @@ if [ $? -eq 0 ]; then
   echo status = success
 else
   echo status = failure
+  exit
 fi
 
 
@@ -14,6 +15,7 @@ if [ $? -eq 0 ]; then
   echo status = success
 else
   echo status = failure
+  exit
 fi
 
 echo "adding roboshop application user"
@@ -21,7 +23,8 @@ useradd roboshop &>>LOG_FILE
 if [ $? -eq 0 ]; then
   echo status = success
 else
-  echo status = failure
+  echo status =
+  exit
 fi
 
 echo "downloading catalogue application code"
@@ -30,6 +33,7 @@ if [ $? -eq 0 ]; then
   echo status = success
 else
   echo status = failure
+  exit
 fi
 
 cd /home/roboshop
@@ -40,6 +44,7 @@ if [ $? -eq 0 ]; then
   echo status = success
 else
   echo status = failure
+  exit
 fi
 
 
@@ -55,6 +60,7 @@ if [ $? -eq 0 ]; then
   echo status = success
 else
   echo status = failure
+  exit
 fi
 
 echo "setup catalogue service"
@@ -63,6 +69,7 @@ if [ $? -eq 0 ]; then
   echo status = success
 else
   echo status = failure
+  exit
 fi
 
 systemctl daemon-reload &>>LOG_FILE
@@ -74,5 +81,6 @@ if [ $? -eq 0 ]; then
   echo status = success
 else
   echo status = failure
+  exit
 fi
 
