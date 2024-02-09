@@ -18,7 +18,7 @@ fi
 
 
 echo "install nodejs"
-dnf install nodejs -y &>>${LOG_FILE}
+yum install nodejs -y
 if [ $? -eq 0 ]; then
   echo status = success
 else
