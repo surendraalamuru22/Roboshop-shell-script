@@ -26,13 +26,16 @@ else
   exit 1
 fi
 
-echo "adding roboshop application user"
-useradd roboshop &>>${LOG_FILE}
-if [ $? -eq 0 ]; then
+id roboshop &>>${LOG_FILE}
+if [ $? -ne 0 ]; then
+ echo "adding roboshop application user"
+ useradd roboshop &>>${LOG_FILE}
+ if [ $? -eq 0 ]; then
   echo status = success
-else
+ else
   echo status =
   exit 1
+ fi
 fi
 
 echo "downloading catalogue application code"
