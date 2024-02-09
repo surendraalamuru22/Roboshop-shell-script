@@ -49,6 +49,15 @@ fi
 
 cd /home/roboshop
 
+echo "clean old app content"
+rm -rf catalogue &>>${LOG_FILE}
+if [ $? -eq 0 ]; then
+  echo status = success
+else
+  echo status = failure
+  exit 1
+fi
+
 echo "extracting catalogue application code"
 unzip /tmp/catalogue.zip &>>${LOG_FILE}
 if [ $? -eq 0 ]; then
