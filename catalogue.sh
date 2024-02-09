@@ -2,7 +2,7 @@ LOG_FILE=/tmp/catalogue
 
 ID=(id -u)
 if [ $ID -ne 0 ]; then
-  you should run this script as root user or with sudo previlages
+  echo you should run this script as root user or with sudo previlages
   exit 1
 fi
 
